@@ -1,6 +1,7 @@
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.layout.StackPane;
+import javafx.scene.media.AudioClip;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
@@ -11,8 +12,12 @@ public class HelloWorldFX extends Application{
         launch();
     }
     
+    String music = getClass().getResource("TheForceSuiteTheme.mp3").toString();
+    
     @Override
     public void start(Stage palco){
+        AudioClip clip = new AudioClip(music);
+        clip.play();
         Rectangle ceu = new Rectangle(900, 450, Color.DARKRED);
         Rectangle mar = new Rectangle(900, 450, Color.DARKBLUE);
         Circle sol = new Circle(90, Color.YELLOW);
